@@ -74,17 +74,46 @@ class CensusACSAdapter(DatasetSourceAdapter):
             raise AdapterError(
                 f"Failed to fetch Census ACS data for {dataset_id} from {BASE_URL}: {exc}"
             ) from exc
+        # The Census API returns 200 OK with an empty body when the request
+        # is malformed or the API key is missing and rate-limiting kicks in.
+        if not resp.content.strip():
+            raise AdapterError(
+                f"Census ACS API returned an empty response for {dataset_id}. "
+                f"Set CENSUS_API_KEY (free key: https://api.census.gov/data/key_signup.html)."
+            )
+        # The Census API returns 200 OK with an HTML error page when no API key
+        # is provided or the request is otherwise rejected.
+        content_type = resp.headers.get("Content-Type", "")
+        if "html" in content_type or resp.content.lstrip()[:1] == b"<":
+            raise AdapterError(
+                f"Census ACS API returned an HTML error page instead of JSON for "
+                f"{dataset_id}. This means the API key is missing or invalid. "
+                f"Set CENSUS_API_KEY in your environment "
+                f"(free key: https://api.census.gov/data/key_signup.html) and re-run."
+            )
         raw_path.write_bytes(resp.content)
         return FetchResult(
             dataset_id=dataset_id,
             raw_path=raw_path,
             retrieved_at=self.now(),
-            access_method=f"HTTP GET {BASE_URL} (Census ACS 5-Year API)",
+            access_method=f"HTTP GET {BASE_URL} (Census ACS 5-Year API, key={'set' if api_key else 'NOT SET'})",
         )
 
     def extract_metadata(self, descriptor: dict[str, Any], fetch_result: FetchResult) -> dict[str, Any]:
         import json
-        data = json.loads(fetch_result.raw_path.read_text())
+        raw_text = fetch_result.raw_path.read_text()
+        if not raw_text.strip() or raw_text.lstrip().startswith("<"):
+            raise AdapterError(
+                f"Raw file for {descriptor['dataset_id']} is not valid JSON "
+                f"(empty or HTML). Census API requires a valid CENSUS_API_KEY."
+            )
+        try:
+            data = json.loads(raw_text)
+        except json.JSONDecodeError as exc:
+            raise AdapterError(
+                f"Failed to parse Census ACS response as JSON for "
+                f"{descriptor['dataset_id']}: {exc}"
+            ) from exc
         header, *rows = data
         return {
             "descriptor": descriptor, "fetch_result": fetch_result,

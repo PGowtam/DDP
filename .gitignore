@@ -10,3 +10,8 @@ data/metadata/*.json
 .env
 .pytest_cache/
 .DS_Store
+
+# Private interview-prep documents — not for public repo
+docs/professor-demo.md
+docs/gra-relevance.md
+docs/audit.md

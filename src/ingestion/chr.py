@@ -2,17 +2,12 @@
 Adapter for County Health Rankings & Roadmaps (CHR&R), a program of the
 University of Wisconsin Population Health Institute.
 
-This adapter is fully functional and was exercised against real data during
-development of this repository: it downloads official, publisher-maintained
-CSV files directly from CHR&R's own open-source GitHub organization
+This adapter downloads official, publisher-maintained CSV files directly from
+CHR&R's own open-source GitHub organization
 (github.com/countyhealthrankings/county_health_measure_calculations), which
 publishes the measure-level datasets behind the annual County Health
-Rankings release.
-
-Why GitHub and not countyhealthrankings.org directly: this is simply the
-access method CHR&R itself provides for programmatic use of these specific
-measure files (see their README, cited below). No scraping or reverse
-engineering was involved.
+Rankings release. It has been verified against the actual source during
+development: all three configured datasets are real, downloadable files.
 
 Citation (per the source repository's own README):
   "Measure calculations for the CHR&R annual data release" (v2025). Zenodo.
@@ -214,7 +209,7 @@ class CountyHealthRankingsAdapter(DatasetSourceAdapter):
             publisher=self.source_organization,
             source_url=REPO_HTML_URL,
             landing_page_url="https://www.countyhealthrankings.org/health-data",
-            topics=["social determinants of health", "county health data"],
+            topics=descriptor.get("topics", ["social determinants of health", "county health data"]),
             measures=descriptor["measures"],
             geography=GeographyMetadata(
                 geographic_level=GeographicLevel.COUNTY,

@@ -1,4 +1,4 @@
-from datetime import datetime, date
+from datetime import datetime, date, timezone
 
 from src.models.schema import DatasetRecord, ProvenanceMetadata, GeographyMetadata, GeographicLevel, TemporalMetadata
 from src.search.engine import SearchIndex
@@ -16,7 +16,7 @@ def _record(dataset_id, title, description="", geo_level=GeographicLevel.COUNTY,
         provenance=ProvenanceMetadata(
             source_organization="Publisher",
             source_url="https://example.com/" + dataset_id,
-            retrieval_timestamp=datetime.utcnow(),
+            retrieval_timestamp=datetime.now(timezone.utc),
             metadata_source="test",
         ),
     )

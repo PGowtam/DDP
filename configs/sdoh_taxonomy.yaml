@@ -63,6 +63,14 @@ domains:
       - preventive
       - chronic disease
       - health outcomes
+      - mortality
+      - premature mortality
+      - premature death
+      - years of potential life lost
+      - ypll
+      - life expectancy
+      - preventable death
+      - maternal mortality
 
   neighborhood_and_built_environment:
     label: "Neighborhood and Built Environment"
@@ -100,3 +108,11 @@ domains:
       - isolation
       - family structure
       - single-parent
+      - social vulnerability
+      - vulnerability index
+      - composite index
+      - racial minority
+      - disability
+      - group quarters
+      - limited english
+      - english proficiency

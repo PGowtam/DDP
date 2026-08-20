@@ -48,8 +48,13 @@ from src.models.schema import (
 logger = logging.getLogger(__name__)
 
 SVI_LANDING_PAGE = "https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html"
-SVI_COUNTY_URL = "https://svi.cdc.gov/Documents/Data/2022_SVI_Data/CSV/SVI2022_US_county.csv"
-SVI_TRACT_URL = "https://svi.cdc.gov/Documents/Data/2022_SVI_Data/CSV/SVI2022_US.csv"
+# NOTE: CDC/ATSDR migrated SVI data hosting from svi.cdc.gov to atsdr.cdc.gov.
+# The 2022 CSV files are available from the landing page above. Direct download
+# URLs are not stable across ATSDR server updates; run from a machine with
+# normal internet access and verify the URL from the official landing page.
+# Format used in the 2022 release (verify current URL at landing page):
+SVI_COUNTY_URL = "https://www.atsdr.cdc.gov/placeandhealth/svi/documentation/csv/SVI2022_US_county.csv"
+SVI_TRACT_URL = "https://www.atsdr.cdc.gov/placeandhealth/svi/documentation/csv/SVI2022_US.csv"
 
 KNOWN_SVI_FILES: list[dict[str, Any]] = [
     {
@@ -157,7 +162,10 @@ class CDCSVIAdapter(DatasetSourceAdapter):
         except requests.RequestException as exc:
             raise AdapterError(
                 f"Failed to fetch CDC SVI from {url}: {exc}. "
-                f"Requires normal outbound network access to svi.cdc.gov."
+                f"The ATSDR SVI portal ({SVI_LANDING_PAGE}) occasionally changes "
+                f"direct download URLs. Verify the current URL for the 2022 county/tract "
+                f"CSV at the landing page above, update SVI_COUNTY_URL / SVI_TRACT_URL "
+                f"in this file, and re-run from a machine with normal internet access."
             ) from exc
         raw_path.write_bytes(resp.content)
         return FetchResult(

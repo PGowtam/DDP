@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from src.models.schema import DatasetRecord, ProvenanceMetadata, ValidationStatus
 from src.validation.rules import validate_record, metadata_completeness_score
@@ -17,7 +17,7 @@ def _valid_record() -> DatasetRecord:
         provenance=ProvenanceMetadata(
             source_organization="Publisher",
             source_url="https://example.com/data",
-            retrieval_timestamp=datetime.utcnow(),
+            retrieval_timestamp=datetime.now(timezone.utc),
             metadata_source="test",
             access_method="test fetch",
         ),

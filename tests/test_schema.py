@@ -1,4 +1,4 @@
-from datetime import datetime, date
+from datetime import datetime, date, timezone
 
 import pytest
 from pydantic import ValidationError
@@ -18,7 +18,7 @@ def _minimal_record(**overrides) -> DatasetRecord:
         provenance=ProvenanceMetadata(
             source_organization="Test Publisher",
             source_url="https://example.com/data",
-            retrieval_timestamp=datetime.utcnow(),
+            retrieval_timestamp=datetime.now(timezone.utc),
             metadata_source="unit test",
         ),
     )
