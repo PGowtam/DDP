@@ -1,0 +1,102 @@
+# SDOH domain taxonomy for the sdoh-data-discovery-pipeline project.
+#
+# Based on the widely used five-domain SDOH framework from Healthy People 2030,
+# broadly adopted across public-health research: economic stability,
+# education, health care, neighborhood/environment, and social/community context.
+#
+# Each domain lists keyword triggers used by src/ontology/classifier.py for
+# deterministic, explainable, rule-based classification. Keep this file the
+# single source of truth for domain keywords rather than hardcoding them in
+# Python.
+
+domains:
+  economic_stability:
+    label: "Economic Stability"
+    description: >
+      Employment, income, poverty, expenses, debt, and economic support that
+      shape a household's material security.
+    keywords:
+      - income
+      - poverty
+      - employment
+      - unemployment
+      - wage
+      - wages
+      - job
+      - jobs
+      - economic
+      - snap
+      - welfare
+      - debt
+      - financial
+
+  education_access_and_quality:
+    label: "Education Access and Quality"
+    description: >
+      Early childhood education, enrollment, graduation, literacy, and
+      language access.
+    keywords:
+      - education
+      - school
+      - schools
+      - literacy
+      - graduation
+      - enrollment
+      - college
+      - student
+      - language proficiency
+
+  health_care_access_and_quality:
+    label: "Health Care Access and Quality"
+    description: >
+      Access to and quality of primary care, insurance coverage, and health
+      services utilization.
+    keywords:
+      - health care
+      - healthcare
+      - insurance
+      - uninsured
+      - clinic
+      - hospital
+      - provider
+      - primary care
+      - preventive
+      - chronic disease
+      - health outcomes
+
+  neighborhood_and_built_environment:
+    label: "Neighborhood and Built Environment"
+    description: >
+      Housing quality and cost burden, transportation, environmental
+      exposures, food access, and neighborhood safety/walkability.
+    keywords:
+      - housing
+      - rent
+      - homeless
+      - transportation
+      - commute
+      - walkability
+      - environment
+      - environmental
+      - air quality
+      - water quality
+      - food access
+      - food desert
+      - crime
+      - neighborhood
+
+  social_and_community_context:
+    label: "Social and Community Context"
+    description: >
+      Social cohesion, civic participation, discrimination, incarceration,
+      and community/social support structures.
+    keywords:
+      - social support
+      - community
+      - civic
+      - discrimination
+      - incarceration
+      - social cohesion
+      - isolation
+      - family structure
+      - single-parent

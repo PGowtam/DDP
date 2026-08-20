@@ -1,0 +1,19 @@
+[project]
+name = "sdoh-data-discovery-pipeline"
+version = "0.1.0"
+description = "Independent research prototype: SDOH dataset discovery, metadata normalization, and geospatial-aware pipeline."
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+    "requests>=2.28",
+    "pyyaml>=6.0",
+    "streamlit>=1.30",
+]
+
+[project.optional-dependencies]
+geo = ["geopandas>=0.14", "shapely>=2.0", "pyproj>=3.5"]
+dev = ["pytest>=7.4"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

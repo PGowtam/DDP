@@ -1,0 +1,382 @@
+[
+  {
+    "dataset_id": "chrr_v001_premature_death_r2026",
+    "title": "Premature Death (Years of Potential Life Lost), County Data, 2026 release",
+    "description": "County-level estimate of the Years of Potential Life Lost (YPLL) rate per 100,000 population, CHR&R's headline 'Length of Life' measure. Identification of this file as the Premature Death / YPLL measure is corroborated by its own column name 'ypll_se' (YPLL standard error), present in the raw file itself.",
+    "publisher": "County Health Rankings & Roadmaps (University of Wisconsin Population Health Institute)",
+    "source_url": "https://github.com/countyhealthrankings/county_health_measure_calculations",
+    "landing_page_url": "https://www.countyhealthrankings.org/health-data",
+    "topics": [
+      "social determinants of health",
+      "county health data"
+    ],
+    "sdoh_domains": {
+      "primary_domain": null,
+      "secondary_domains": [],
+      "keywords": [],
+      "confidence": 0.0,
+      "rationale": [],
+      "machine_generated": false
+    },
+    "population": null,
+    "measures": [
+      "premature_death_ypll_rate"
+    ],
+    "concepts": [],
+    "geography": {
+      "geographic_level": "county",
+      "geographic_unit": "U.S. county (state FIPS + county FIPS)",
+      "geographic_coverage": [
+        "US-national"
+      ],
+      "geographic_identifiers": [
+        "fips_state",
+        "fips_county"
+      ],
+      "state_coverage": false,
+      "county_coverage": true,
+      "tract_coverage": false,
+      "spatial_reference_system": null,
+      "geometry_available": false,
+      "geometry_type": "none"
+    },
+    "time": {
+      "temporal_coverage_start": null,
+      "temporal_coverage_end": null,
+      "temporal_resolution": "annual release, multi-year underlying estimate",
+      "reference_period": "2026 release",
+      "update_frequency": null
+    },
+    "structure": {
+      "file_format": "csv",
+      "data_type": "tabular",
+      "schema_url": null,
+      "row_count": 3204,
+      "column_count": 10,
+      "columns": [
+        "statecode",
+        "countycode",
+        "v001_numerator",
+        "v001_denominator",
+        "v001_rawvalue",
+        "ypll_se",
+        "v001_cilow",
+        "v001_cihigh",
+        "flag2_cb",
+        "v001_flag_CT"
+      ],
+      "missingness_summary": {
+        "statecode": 0.0,
+        "countycode": 0.0,
+        "v001_numerator": 0.0194,
+        "v001_denominator": 0.0194,
+        "v001_rawvalue": 0.0194,
+        "ypll_se": 0.0194,
+        "v001_cilow": 0.0194,
+        "v001_cihigh": 0.0194,
+        "flag2_cb": 0.9176,
+        "v001_flag_CT": 0.9947
+      }
+    },
+    "access": {
+      "access_type": "open_download",
+      "api_available": false,
+      "download_available": true,
+      "authentication_required": false,
+      "license": "See https://www.countyhealthrankings.org/health-data (not independently re-hosted here beyond this raw CSV).",
+      "usage_restrictions": null
+    },
+    "provenance": {
+      "source_organization": "County Health Rankings & Roadmaps (University of Wisconsin Population Health Institute)",
+      "source_url": "https://raw.githubusercontent.com/countyhealthrankings/county_health_measure_calculations/main/measure_datasets/v001_r2026.csv",
+      "retrieval_timestamp": "2026-08-19T10:58:56.992636Z",
+      "metadata_source": "Column names and row/column counts computed directly from the fetched raw CSV.",
+      "access_method": "HTTP GET https://raw.githubusercontent.com/countyhealthrankings/county_health_measure_calculations/main/measure_datasets/v001_r2026.csv (official CHR&R GitHub org, raw CSV)",
+      "raw_file_path": "data/raw/chrr_v001_premature_death_r2026.csv",
+      "raw_sha256": "03c41c3f276c7af0a570a232ec32de1a15e3deb21629a9034f8db8dad6fbc1de",
+      "transformation_history": [
+        "Downloaded unmodified CSV from official CHR&R GitHub org.",
+        "Computed row_count, column_count, and per-column missingness directly from the file.",
+        "No values in the raw data were altered."
+      ]
+    },
+    "quality": {
+      "validation_status": "valid_with_warnings",
+      "validation_errors": [],
+      "warnings": [
+        "No SDOH domain could be classified from title/description/measures"
+      ],
+      "metadata_completeness_score": 1.0
+    }
+  },
+  {
+    "dataset_id": "chrr_v063_median_household_income_r2025",
+    "title": "Median Household Income, County Data, 2025 release",
+    "description": "County-level median household income, sourced by CHR&R from the U.S. Census Bureau's Small Area Income and Poverty Estimates (SAIPE) program. Identification of this file as Median Household Income is corroborated by cross-referencing its national-level (statecode=00) rawvalue (~$77,719) against the published 2023 U.S. median household income.",
+    "publisher": "County Health Rankings & Roadmaps (University of Wisconsin Population Health Institute)",
+    "source_url": "https://github.com/countyhealthrankings/county_health_measure_calculations",
+    "landing_page_url": "https://www.countyhealthrankings.org/health-data",
+    "topics": [
+      "social determinants of health",
+      "county health data"
+    ],
+    "sdoh_domains": {
+      "primary_domain": "economic_stability",
+      "secondary_domains": [],
+      "keywords": [
+        "income",
+        "poverty"
+      ],
+      "confidence": 0.67,
+      "rationale": [
+        "income",
+        "poverty"
+      ],
+      "machine_generated": false
+    },
+    "population": null,
+    "measures": [
+      "median_household_income_usd"
+    ],
+    "concepts": [],
+    "geography": {
+      "geographic_level": "county",
+      "geographic_unit": "U.S. county (state FIPS + county FIPS)",
+      "geographic_coverage": [
+        "US-national"
+      ],
+      "geographic_identifiers": [
+        "fips_state",
+        "fips_county"
+      ],
+      "state_coverage": false,
+      "county_coverage": true,
+      "tract_coverage": false,
+      "spatial_reference_system": null,
+      "geometry_available": false,
+      "geometry_type": "none"
+    },
+    "time": {
+      "temporal_coverage_start": null,
+      "temporal_coverage_end": null,
+      "temporal_resolution": "annual release, multi-year underlying estimate",
+      "reference_period": "2025 release",
+      "update_frequency": null
+    },
+    "structure": {
+      "file_format": "csv",
+      "data_type": "tabular",
+      "schema_url": null,
+      "row_count": 3204,
+      "column_count": 9,
+      "columns": [
+        "statecode",
+        "countycode",
+        "v063_rawvalue",
+        "v063_cilow",
+        "v063_cihigh",
+        "v063_numerator",
+        "v063_denominator",
+        "v063_sourceflag",
+        "v063_flag_CT"
+      ],
+      "missingness_summary": {
+        "statecode": 0.0,
+        "countycode": 0.0,
+        "v063_rawvalue": 0.0028,
+        "v063_cilow": 0.0028,
+        "v063_cihigh": 0.0028,
+        "v063_numerator": 1.0,
+        "v063_denominator": 1.0,
+        "v063_sourceflag": 1.0,
+        "v063_flag_CT": 0.9947
+      }
+    },
+    "access": {
+      "access_type": "open_download",
+      "api_available": false,
+      "download_available": true,
+      "authentication_required": false,
+      "license": "See https://www.countyhealthrankings.org/health-data (not independently re-hosted here beyond this raw CSV).",
+      "usage_restrictions": null
+    },
+    "provenance": {
+      "source_organization": "County Health Rankings & Roadmaps (University of Wisconsin Population Health Institute)",
+      "source_url": "https://raw.githubusercontent.com/countyhealthrankings/county_health_measure_calculations/main/measure_datasets/v063_r2025.csv",
+      "retrieval_timestamp": "2026-08-19T10:58:57.056665Z",
+      "metadata_source": "Column names and row/column counts computed directly from the fetched raw CSV.",
+      "access_method": "HTTP GET https://raw.githubusercontent.com/countyhealthrankings/county_health_measure_calculations/main/measure_datasets/v063_r2025.csv (official CHR&R GitHub org, raw CSV)",
+      "raw_file_path": "data/raw/chrr_v063_median_household_income_r2025.csv",
+      "raw_sha256": "053e6abd9e48f7cdfd733fb7b7794baebc16db193c2800d764edef6fa491ad12",
+      "transformation_history": [
+        "Downloaded unmodified CSV from official CHR&R GitHub org.",
+        "Computed row_count, column_count, and per-column missingness directly from the file.",
+        "No values in the raw data were altered."
+      ]
+    },
+    "quality": {
+      "validation_status": "valid",
+      "validation_errors": [],
+      "warnings": [],
+      "metadata_completeness_score": 1.0
+    }
+  },
+  {
+    "dataset_id": "chrr_v001_race_population_estimates_r2026",
+    "title": "Population Estimates by Race/Ethnicity, County Data, 2026 release",
+    "description": "County-level population estimates broken out by race/ethnicity category (used by CHR&R as denominators for race-stratified rate calculations). Column meaning is self-evident from the source's own column names (v001_race_white, v001_race_black, v001_race_hispanic, etc.) and was not further reinterpreted.",
+    "publisher": "County Health Rankings & Roadmaps (University of Wisconsin Population Health Institute)",
+    "source_url": "https://github.com/countyhealthrankings/county_health_measure_calculations",
+    "landing_page_url": "https://www.countyhealthrankings.org/health-data",
+    "topics": [
+      "social determinants of health",
+      "county health data"
+    ],
+    "sdoh_domains": {
+      "primary_domain": null,
+      "secondary_domains": [],
+      "keywords": [],
+      "confidence": 0.0,
+      "rationale": [],
+      "machine_generated": false
+    },
+    "population": null,
+    "measures": [
+      "population_white",
+      "population_black",
+      "population_aian",
+      "population_asian",
+      "population_nhopi",
+      "population_two_or_more_races",
+      "population_hispanic"
+    ],
+    "concepts": [],
+    "geography": {
+      "geographic_level": "county",
+      "geographic_unit": "U.S. county (state FIPS + county FIPS)",
+      "geographic_coverage": [
+        "US-national"
+      ],
+      "geographic_identifiers": [
+        "fips_state",
+        "fips_county"
+      ],
+      "state_coverage": false,
+      "county_coverage": true,
+      "tract_coverage": false,
+      "spatial_reference_system": null,
+      "geometry_available": false,
+      "geometry_type": "none"
+    },
+    "time": {
+      "temporal_coverage_start": null,
+      "temporal_coverage_end": null,
+      "temporal_resolution": "annual release, multi-year underlying estimate",
+      "reference_period": "2026 release",
+      "update_frequency": null
+    },
+    "structure": {
+      "file_format": "csv",
+      "data_type": "tabular",
+      "schema_url": null,
+      "row_count": 3204,
+      "column_count": 31,
+      "columns": [
+        "statecode",
+        "countycode",
+        "v001_race_white",
+        "v001_race_white_cilow",
+        "v001_race_white_cihigh",
+        "v001_race_white_flag2",
+        "v001_race_black",
+        "v001_race_black_cilow",
+        "v001_race_black_cihigh",
+        "v001_race_black_flag2",
+        "v001_race_aian",
+        "v001_race_aian_cilow",
+        "v001_race_aian_cihigh",
+        "v001_race_aian_flag2",
+        "v001_race_asian",
+        "v001_race_asian_cilow",
+        "v001_race_asian_cihigh",
+        "v001_race_asian_flag2",
+        "v001_race_nhopi",
+        "v001_race_nhopi_cilow",
+        "v001_race_nhopi_cihigh",
+        "v001_race_nhopi_flag2",
+        "v001_race_tom",
+        "v001_race_tom_cilow",
+        "v001_race_tom_cihigh",
+        "v001_race_tom_flag2",
+        "v001_race_hispanic",
+        "v001_race_hispanic_cilow",
+        "v001_race_hispanic_cihigh",
+        "v001_race_hispanic_flag2",
+        "v001_race_flag_CT"
+      ],
+      "missingness_summary": {
+        "statecode": 0.0,
+        "countycode": 0.0,
+        "v001_race_white": 0.0312,
+        "v001_race_white_cilow": 0.0312,
+        "v001_race_white_cihigh": 0.0312,
+        "v001_race_white_flag2": 0.868,
+        "v001_race_black": 0.5321,
+        "v001_race_black_cilow": 0.5321,
+        "v001_race_black_cihigh": 0.5321,
+        "v001_race_black_flag2": 0.3645,
+        "v001_race_aian": 0.8633,
+        "v001_race_aian_cilow": 0.8633,
+        "v001_race_aian_cihigh": 0.8633,
+        "v001_race_aian_flag2": 0.0824,
+        "v001_race_asian": 0.8558,
+        "v001_race_asian_cilow": 0.8558,
+        "v001_race_asian_cihigh": 0.8558,
+        "v001_race_asian_flag2": 0.0971,
+        "v001_race_nhopi": 0.9707,
+        "v001_race_nhopi_cilow": 0.9707,
+        "v001_race_nhopi_cihigh": 0.9707,
+        "v001_race_nhopi_flag2": 0.0218,
+        "v001_race_tom": 0.8817,
+        "v001_race_tom_cilow": 0.8817,
+        "v001_race_tom_cihigh": 0.8817,
+        "v001_race_tom_flag2": 0.0712,
+        "v001_race_hispanic": 0.6364,
+        "v001_race_hispanic_cilow": 0.6364,
+        "v001_race_hispanic_cihigh": 0.6364,
+        "v001_race_hispanic_flag2": 0.2865,
+        "v001_race_flag_CT": 0.9947
+      }
+    },
+    "access": {
+      "access_type": "open_download",
+      "api_available": false,
+      "download_available": true,
+      "authentication_required": false,
+      "license": "See https://www.countyhealthrankings.org/health-data (not independently re-hosted here beyond this raw CSV).",
+      "usage_restrictions": null
+    },
+    "provenance": {
+      "source_organization": "County Health Rankings & Roadmaps (University of Wisconsin Population Health Institute)",
+      "source_url": "https://raw.githubusercontent.com/countyhealthrankings/county_health_measure_calculations/main/measure_datasets/v001_otherdata_r2026.csv",
+      "retrieval_timestamp": "2026-08-19T10:58:57.120913Z",
+      "metadata_source": "Column names and row/column counts computed directly from the fetched raw CSV.",
+      "access_method": "HTTP GET https://raw.githubusercontent.com/countyhealthrankings/county_health_measure_calculations/main/measure_datasets/v001_otherdata_r2026.csv (official CHR&R GitHub org, raw CSV)",
+      "raw_file_path": "data/raw/chrr_v001_race_population_estimates_r2026.csv",
+      "raw_sha256": "436ed4a15c7c2bc44c7d19e2458afefefce357750850ac7fd94fc95d602a3830",
+      "transformation_history": [
+        "Downloaded unmodified CSV from official CHR&R GitHub org.",
+        "Computed row_count, column_count, and per-column missingness directly from the file.",
+        "No values in the raw data were altered."
+      ]
+    },
+    "quality": {
+      "validation_status": "valid_with_warnings",
+      "validation_errors": [],
+      "warnings": [
+        "No SDOH domain could be classified from title/description/measures"
+      ],
+      "metadata_completeness_score": 1.0
+    }
+  }
+]
