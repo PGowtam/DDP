@@ -1,13 +1,5 @@
 # SDOH Data Discovery & Metadata Pipeline
 
-> **Disclaimer:** This is an independent research prototype. It is not
-> affiliated with, endorsed by, or part of the SDOH & Place Project, the
-> HEROP Lab, or the University of Illinois at Urbana-Champaign. Developed to
-> explore computational approaches to data discovery and metadata normalization
-> workflows relevant to publicly described SDOH research problems.
-
----
-
 ## Overview
 
 A reproducible pipeline that ingests real public Social Determinants of Health
