@@ -151,9 +151,3 @@ See `docs/future-work.md` -- more sources, FastAPI layer, Docker/CI,
 optional semantic search, real geometry ingestion, FIPS/GEOID crosswalk
 validation.
 
-## Skills Demonstrated
-
-```
-Computer Science + Data Engineering + Machine Learning +
-Research Methodology + Geospatial/Data-Discovery
-```
